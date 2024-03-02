@@ -57,6 +57,12 @@ class MyHomePage extends StatelessWidget {
                 if (state.isPositive) {
                   color = Colors.green;
                 }
+
+                //change the text color to red when value is less than 0
+
+                if (state.isNegative) {
+                  color = Colors.red;
+                }
                 // Display the count with styling.
                 return Text(
                   'Count: ${state.count}',
@@ -76,6 +82,16 @@ class MyHomePage extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () => counterCubit.increment(),
                   child: const Text('Increment'),
+                ),
+
+// add a space between two buttons
+                const SizedBox(
+                  height: 90,
+                ),
+
+                ElevatedButton(
+                  onPressed: () => counterCubit.decrement(),
+                  child: const Text('Decrement'),
                 ),
               ],
             ),
